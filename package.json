@@ -1,0 +1,26 @@
+{
+  "name": "playwright-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:all": "playwright test tests/",
+    "test:task": "playwright test tests/task-test.spec.js",
+    "test:ui": "playwright test tests/without-sign-in-tests.spec.js",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "npm run test:all && npm run report",
+    "report": "allure generate allure-results -o allure-report --clean && allure open allure-report",
+    "allure:report": "allure generate allure-results -o allure-report --clean",
+    "allure:open": "allure open allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.1",
+    "allure-playwright": "^3.4.5"
+  }
+}
